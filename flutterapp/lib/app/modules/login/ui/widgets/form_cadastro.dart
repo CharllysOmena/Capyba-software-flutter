@@ -87,7 +87,12 @@ class FormCadastro extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(
-                onTap: () => Modular.to.navigate("/login"),
+                onTap: () {
+                  Modular.to.navigate("/login");
+                  store.nomeController.text = "";
+                  store.emailController.text = "";
+                  store.senhaController.text = "";
+                },
                 child: RichText(
                   text: TextSpan(
                     style: TextStyle(color: Colors.black, fontSize: 15),

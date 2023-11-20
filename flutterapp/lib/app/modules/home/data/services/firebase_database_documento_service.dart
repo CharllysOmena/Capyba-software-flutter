@@ -18,8 +18,7 @@ class FirebaseDatabaseDocumentoService
   @override
   Future<FirebaseDocumentoDatabaseState> get() async {
     try {
-      QuerySnapshot querySnapshot =
-          await documentosCollection.where("id", isEqualTo: user!.uid).get();
+      QuerySnapshot querySnapshot = await documentosCollection.get();
       List<Documento> documentos = [];
 
       if (querySnapshot.docs.isNotEmpty) {
